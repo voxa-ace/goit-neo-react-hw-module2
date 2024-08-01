@@ -1,7 +1,5 @@
-// import React from "react";
 import PropTypes from "prop-types";
 import "./Description.module.css";
-
 
 const CafeInfo = ({ name, description }) => {
   return (
