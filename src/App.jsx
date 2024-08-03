@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import CafeInfo from "./Components/Description/Description";
-import Feedback from "./Components/Feedback/Feedback";
-import Options from "./Components/Options/Options";
+import CafeInfo from "./components/Description/Description";
+import Feedback from "./components/Feedback/Feedback";
+import Options from "./components/Options/Options";
 import styles from "./App.module.css"; 
 
 const App = () => {
