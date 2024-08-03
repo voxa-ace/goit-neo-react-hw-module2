@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CafeInfo from "./components/Description/Description";
+import Description from "./components/Description/Description";
 import Feedback from "./components/Feedback/Feedback";
 import Options from "./components/Options/Options";
 import styles from "./App.module.css"; 
@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <div className={styles.app}> 
-      <CafeInfo
+      <Description
         name="Sip Happens Café"
         description="Please leave your feedback about our service by selecting one of the options below."
       />
