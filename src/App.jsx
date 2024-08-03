@@ -1,24 +1,18 @@
 import { useState, useEffect } from "react";
-import CafeInfo from "./Description/Description";
-import Feedback from "./Feedback/Feedback";
-import Options from "./Options/Options";
+import CafeInfo from "./Components/Description/Description";
+import Feedback from "./Components/Feedback/Feedback";
+import Options from "./Components/Options/Options";
 import styles from "./App.module.css"; 
 
 const App = () => {
-  const [feedbacks, setFeedbacks] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0
+  const [feedbacks, setFeedbacks] = useState(() => {
+    // Зчитування даних з localStorage при першому завантаженні
+    const savedFeedbacks = localStorage.getItem("feedbacks");
+    return savedFeedbacks ? JSON.parse(savedFeedbacks) : { good: 0, neutral: 0, bad: 0 };
   });
 
   useEffect(() => {
-    const savedFeedbacks = JSON.parse(localStorage.getItem("feedbacks"));
-    if (savedFeedbacks) {
-      setFeedbacks(savedFeedbacks);
-    }
-  }, []);
-
-  useEffect(() => {
+    // Збереження даних у localStorage при зміні стану
     localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
   }, [feedbacks]);
 
@@ -43,7 +37,7 @@ const App = () => {
     : 0;
 
   return (
-    <div className={styles.app}> {/* Використання класу через styles */}
+    <div className={styles.app}> 
       <CafeInfo
         name="Sip Happens Café"
         description="Please leave your feedback about our service by selecting one of the options below."
