@@ -6,13 +6,11 @@ import styles from "./App.module.css";
 
 const App = () => {
   const [feedbacks, setFeedbacks] = useState(() => {
-    // Зчитування даних з localStorage при першому завантаженні
     const savedFeedbacks = localStorage.getItem("feedbacks");
     return savedFeedbacks ? JSON.parse(savedFeedbacks) : { good: 0, neutral: 0, bad: 0 };
   });
 
   useEffect(() => {
-    // Збереження даних у localStorage при зміні стану
     localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
   }, [feedbacks]);
 
