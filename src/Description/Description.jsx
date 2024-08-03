@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import "./Description.module.css";
+import styles from "./Description.module.css";
 
 const CafeInfo = ({ name, description }) => {
   return (
-    <div className="cafe-info">
-      <h2 className="cafe-name">{name}</h2>
-      <p className="cafe-description">{description}</p>
+    <div className={styles["cafe-info"]}> 
+      <h2 className={styles["cafe-name"]}>{name}</h2>
+      <p className={styles["cafe-description"]}>{description}</p>
     </div>
   );
 };

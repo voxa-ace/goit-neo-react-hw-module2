@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import "./Feedback.module.css";
+import styles from "./Feedback.module.css"; 
 
 const Feedback = ({ feedbacks, totalFeedback, positiveFeedbackPercentage }) => {
   return (
-    <div className="feedback">
+    <div className={styles.feedback}> 
       <h3>Feedback Statistics</h3>
       <ul>
         <li>Good: {feedbacks.good}</li>
