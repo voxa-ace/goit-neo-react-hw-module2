@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import Description from "./components/Description/Description";
-import Feedback from "./components/Feedback/Feedback";
-import Options from "./components/Options/Options";
-import styles from "./App.module.css"; 
-
+import Description from "./components/Description/Description.jsx";
+import Feedback from "./components/Feedback/Feedback.jsx";
+import Options from "./components/Options/Options.jsx";
+import styles from "./App.module.css";
 
 const App = () => {
   const [feedbacks, setFeedbacks] = useState(() => {
@@ -36,7 +35,7 @@ const App = () => {
     : 0;
 
   return (
-    <div className={styles.app}> 
+    <div className={styles.app}>
       <Description
         name="Sip Happens Café"
         description="Please leave your feedback about our service by selecting one of the options below."
