@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Description from "./components/Description/Description.jsx";
 import Feedback from "./components/Feedback/Feedback.jsx";
 import Options from "./components/Options/Options.jsx";
+import Notification from "./components/Notification/Notification.jsx"; 
 import styles from "./App.module.css";
 
 const App = () => {
@@ -45,12 +46,14 @@ const App = () => {
         resetFeedback={resetFeedbacks}
         totalFeedback={totalFeedback}
       />
-      {totalFeedback > 0 && (
+      {totalFeedback > 0 ? (
         <Feedback 
           feedbacks={feedbacks} 
           totalFeedback={totalFeedback} 
           positiveFeedbackPercentage={positiveFeedbackPercentage}
         />
+      ) : (
+        <Notification message="No feedback given" /> 
       )}
     </div>
   );
